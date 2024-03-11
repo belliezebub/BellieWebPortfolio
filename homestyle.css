@@ -139,3 +139,17 @@ header {
 .btn-box a:hover::before{
 	width:100%;
 }
+
+.home-imgHover{
+	position: absolute;
+	top:0;
+	right:10px;
+	width: 500px;
+	height:100%;
+	background: transparent;
+	transition: 3s;	
+}
+.home-imgHover:hover{
+	background: #081b29;
+	opacity:.8;
+}
