@@ -209,14 +209,13 @@ header {
 
     .myPhoto {
         display: block;
-        border-radius: 50%; /* Make the frame round */
-        width: 30%; /* Decrease the size of the photo */
-        max-width: 200px; /* Limit the maximum width */
-        position: relative; /* Change position to relative */
-        top: 0; /* Reset top position */
-        left: 0; /* Reset left position */
-        transform: none; /* Reset transform */
-        margin-right: 20px; /* Add margin to separate from the content */
+        margin: 0 auto; /* Center the image horizontally */
+        border-radius: 50%; /* Round the corners */
+        width: 150px; /* Adjust the width of the image */
+        height: 150px; /* Adjust the height of the image */
+        object-fit: cover; /* Maintain aspect ratio */
+        margin-top: 20px; /* Add space between the logo and the image */
+        padding: 15px;
     }
 
     .home-content h1 {
