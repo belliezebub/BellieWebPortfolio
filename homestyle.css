@@ -195,41 +195,37 @@ header {
 @media only screen and (max-width: 767px) {
     .home {
         background: #081b29;
-        justify-content: flex-start; /* Align content to the start */
+        justify-content: center;
+        align-items: flex-start; /* Align items to the start */
         padding: 20px;
     }
 
     .home-content {
-        max-width: 80%; /* Reduce the width of the content */
+        max-width: 60%; /* Reduce the width of the content */
         padding: 20px; /* Add padding to the content */
-        margin-top: 20px; /* Add margin to separate from the photo */
+        margin-top: 0; /* Remove margin top */
+        margin-left: 20px; /* Add margin to separate from the photo */
     }
 
     .myPhoto {
         display: block;
         border-radius: 50%; /* Make the frame round */
-        width: 70%; /* Decrease the size of the photo */
+        width: 30%; /* Decrease the size of the photo */
         max-width: 200px; /* Limit the maximum width */
-        position: absolute;
-        top: 10%; /* Adjust the position */
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1; /* Bring the photo above the content */
+        position: relative; /* Change position to relative */
+        top: 0; /* Reset top position */
+        left: 0; /* Reset left position */
+        transform: none; /* Reset transform */
+        margin-right: 20px; /* Add margin to separate from the content */
     }
 
     .home-content h1 {
         font-size: 30px; /* Decrease the font size */
-        margin-top: 40px; /* Adjust the margin */
+        margin-top: 0; /* Remove margin top */
     }
 
     .home-content p {
         font-size: 14px; /* Decrease the font size */
         margin: 10px 0 20px; /* Adjust the margin */
-    }
-}
-
-
-    .home-content h1 {
-        margin-top: 120px;
     }
 }
