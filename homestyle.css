@@ -205,7 +205,7 @@ header {
         padding: 20px 0;
         width: 90%;
     }
-
+ 
     .myPhoto {
         display: block;
         margin: 0 auto;
@@ -229,7 +229,7 @@ header {
 
     .home-content {
         max-width: 60%;
-        padding: 20px;
+        padding: 20px 0; /* Removed left and right paddings */
         margin-top: 0;
         margin-left: 20px;
     }
@@ -238,10 +238,12 @@ header {
         font-size: 30px;
         margin-top: 0;
     }
-.home-content h3 {
+
+    .home-content h1 {
         font-size: 20px;
         margin-top: 0;
     }
+
     .home-content p {
         font-size: 14px;
         margin: 10px 0 20px;
