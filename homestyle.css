@@ -69,10 +69,7 @@ header {
     opacity: 0; /* Initially hide content */
 }
 
-.home-content.show {
-    opacity: 1; /* Show content when animation ends */
-    transition: opacity 1s ease; /* Smooth transition */
-}
+
 
 .home-content h1 {
     font-size: 50px;
@@ -101,7 +98,12 @@ header {
         border-color: transparent;
     }
 }
-
+.home-content p.show,
+.home-content h3.show,
+.home-content .btn-group.show,{
+    opacity: 1; /* Show content when animation ends */
+    transition: opacity 1s ease; /* Smooth transition */
+}
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
