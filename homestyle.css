@@ -238,7 +238,10 @@ header {
         font-size: 30px;
         margin-top: 0;
     }
-
+.home-content h3 {
+        font-size: 20px;
+        margin-top: 0;
+    }
     .home-content p {
         font-size: 14px;
         margin: 10px 0 20px;
