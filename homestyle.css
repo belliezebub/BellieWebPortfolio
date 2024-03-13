@@ -185,7 +185,7 @@ header {
         top: calc(50% - 75px); /* Position myPhoto vertically */
         left: 50%; /* Position myPhoto horizontally */
         transform: translateX(-50%); /* Center myPhoto horizontally */
-        z-index: -1; /* Set z-index below content */
+       /* z-index: -1; Set z-index below content */
     }
 
     .home-content h1 {
