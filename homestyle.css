@@ -1,157 +1,234 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* General styles */
 * {
-   	 margin: 0;
-    	padding: 0;
-    	box-sizing: border-box;
-    	font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-	
-	color: #ededed;
-	
+body {
+    margin: 15px;
+    padding: 0;
+    background-color: #081b29;
+    font-family: Arial, sans-serif;
 }
+
 header {
-    	position: fixed;
-    	top: 0;
-    	left: 0;
-    	width: 100%;
-    	padding: 20px 10%;
-    	display: flex;
-    	justify-content: space-between;
-    	align-items: center;
-    	z-index: 100;
+    text-align: center;
+    padding: 20px 0;
+    width: 90%;
 }
-.logo {
-    	font-size: 32px;
-    	color: #ededed;
-	text-decoration:none;
-    	cursor: default;
-	font-weight:600;
-}
+
 .logo span {
-    	color: #7d2ae8;
+    color: #7d2ae8;
 }
 
-.navigation a {
-    	font-size: 18px;
-    	color: #ededed;
-    	text-decoration: none;
-    	margin-left: 35px;
-    	font-weight: 500;
-	margin-left:35px;
-    	transition: .3s;
-}
-.myPhoto{display:none;}
-.navigation a:hover {
-    	color: #00abf0;
-}
-.home{
-	height: 100vh;
-	background: url('home.jpg') no-repeat;
-	background-size: cover;
-	background-position: center;
-	display: flex;
-	align-items: center;
-	padding: 0 10%;
+.logo {
+    font-size: 32px;
+    color: white;
+    margin: 0;
 }
 
-.home-content{
-	max-width: 600px;
+.myPhoto {
+    display: none;
 }
 
-.home-content h1{
-	font-size:50px;
-	font-weight: 700;
-	line-weight: 1.2;
- 	overflow: hidden; /* to hide overflow text */
-   	white-space: nowrap; /* to prevent wrapping */
-    	border-right: 2px solid #ededed; /* simulated cursor */
-    	animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+/* Home section */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.home-content h1 {
+    color: #ededed;
+    margin-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #ededed;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
-    	from {
-	        width: 0;
-	}
-	to {
-        	width: 100%;
-    	}
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blink-caret {
-	from, to {
-        	border-color: transparent;
-    	}
-    	50% {
-        	border-color: transparent; /* make the caret invisible */
-    	}
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: transparent;
+    }
 }
 
-}
-.home-content h3{
-	font-size: 32px;
-	font-weight: 700px;
-	color: #00abf0;
+.home-content h3,
+.home-content p {
+    display: none;
 }
 
-.home-content p{
-	font-size:16px;
-	margin: 20px 0 40px;
-}
-.home-content .btn-box{
-	display: flex;
-	width: 155px;
-	height: 50px;
-	background: transparent;
-}
-.btn-box a{
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	width:150px;
-	height:	100%;
-	background: #00abf0;
-	border: 2px solid;
-	border-radius: 8px;
-	font-size: 19px;
-	color: #081b29;
-	text-decoration: none;
-	font-weight: 600;
-	letter-spacing: 1px;
-	z-index:1;
-	overflow: hidden;
-	transition: .5s;
-}
-.btn-box a:hover{
-	color: #00abf0;
-}
-.btn-box a::before{
-	content:'';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	background: #081b29;;
-	z-index: -1;
-	transition: .5s;
-}
-.btn-box a:hover::before{
-	width:100%;
+.home-content.show h3,
+.home-content.show p {
+    display: block;
 }
 
-.home-imgHover{
-	position: absolute;
-	top:0;
-	right:10px;
-	width: 500px;
-	height:100%;
-	background: transparent;
-	transition: 3s;	
+.home-content.show h3 {
+    animation: fadeIn 1s ease forwards;
+    color: #00abf0;
 }
-.home-imgHover:hover{
-	background: #081b29;
-	opacity:.5;
+
+.home-content.show p {
+    margin-top: 10px;
+    animation: slideUp 1s ease forwards;
+    color: #ededed;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.btn-group {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.btn-group.show {
+    opacity: 1;
+}
+
+.btn-group a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #7d2ae8;
+    border: 2px solid;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.5s ease;
+}
+
+.btn-group a:hover {
+    color: #00abf0;
+    background-color: #5a1a8a;
+    transform: translateY(-5px);
+}
+
+.btn-group a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-group a:hover::before {
+    width: 100%;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+    .myPhoto {
+        display: block;
+    }
+}
+/* Add a media query for screens smaller than 768px */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 20px 5%; /* Adjust padding for smaller screens */
+    }
+    .logo {
+        font-size: 28px; /* Decrease logo size */
+    }
+    .navigation a {
+        font-size: 16px; /* Decrease navigation links size */
+        margin-left: 20px; /* Adjust spacing */
+    }
+    .home-content h1 {
+        font-size: 40px; /* Decrease font size for smaller screens */
+    }
+    .home-content h3 {
+        font-size: 24px; /* Decrease font size for smaller screens */
+    }
+    .home-content p {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+    .btn-group {
+        width: 130px; /* Adjust button group width */
+    }
+    .btn-group a {
+        width: 120px; /* Adjust button width */
+        font-size: 16px; /* Decrease font size for smaller screens */
+    }
+}
+
+/* Add a media query for screens smaller than 576px */
+@media only screen and (max-width: 576px) {
+    .logo {
+        font-size: 24px; /* Further decrease logo size */
+    }
+    .navigation {
+        display: none; /* Hide navigation links */
+    }
+    .home-content {
+        padding: 0 5%; /* Adjust content padding */
+    }
+    .home-content h1 {
+        font-size: 32px; /* Further decrease font size for smaller screens */
+    }
+    .home-content h3 {
+        font-size: 20px; /* Further decrease font size for smaller screens */
+    }
+    .home-content p {
+        font-size: 12px; /* Further decrease font size for smaller screens */
+    }
+    .btn-group {
+        width: 100%; /* Make button group full width */
+    }
+    .btn-group a {
+        width: 100%; /* Make buttons full width */
+        margin-bottom: 10px; /* Add some vertical spacing */
+    }
+    .home-imgHover {
+        display: none; /* Hide image on smaller screens */
+    }
 }
