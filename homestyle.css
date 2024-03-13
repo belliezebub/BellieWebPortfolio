@@ -60,7 +60,7 @@ header {
     background-position: center;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 2%; /* Added 2% padding on each side */
 }
 
 .home-content {
@@ -194,58 +194,46 @@ header {
 
 @media only screen and (max-width: 767px) {
     body {
-        margin: 15px;
-        padding: 0;
-        background-color: #081b29;
-        font-family: Arial, sans-serif;
+        margin: 0; /* Removed margin for body */
     }
-
-    header {
-        text-align: center;
-        padding: 20px 0;
-        width: 90%;
-    }
- 
-    .myPhoto {
-        display: block;
-        margin: 0 auto;
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        margin-top: 20px;
-        padding: 15px;
-    }
-
-    .home {
-        display: flex;
-        flex-direction: column;
+    .header{
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin-top: 20px;
-        width: 90%;
+    }
+    .home {
+        padding: 0 2%; /* Added 2% padding on each side */
+        width: 100%; /* Made home width 100% */
+        align-items: center; /* Centered the content vertically */
+        background-color: #081b29;
     }
 
     .home-content {
-        max-width: 60%;
-        padding: 20px 0; /* Removed left and right paddings */
-        margin-top: 0;
-        margin-left: 20px;
+        max-width: 600px;
+        opacity: 0;
+        animation: fadeIn 1s ease 1s forwards;
+        margin: 0 2%; /* Added 2% margin on each side */
+    }
+
+    .myPhoto {
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+        border-radius: 50%; /* Round the corners */
+        width: 150px; /* Adjust the width of the image */
+        height: 150px; /* Adjust the height of the image */
+        object-fit: cover; /* Maintain aspect ratio */
+        margin-top: 20px; /* Add space between the logo and the image */
+        padding: 15px;
     }
 
     .home-content h1 {
-        font-size: 30px;
-        margin-top: 0;
+        font-size: 30px; /* Decrease the font size */
+        margin-top: 0; /* Remove margin top */
     }
-
-    .home-content h1 {
-        font-size: 20px;
-        margin-top: 0;
+.home-content h3 {
+        font-size: 20px; /* Decrease the font size */
+        margin-top: 2px; /* Remove margin top */
     }
-
     .home-content p {
-        font-size: 14px;
-        margin: 10px 0 20px;
+        font-size: 14px; /* Decrease the font size */
+        margin: 10px 0 20px; /* Adjust the margin */
     }
 }
