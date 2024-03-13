@@ -66,7 +66,6 @@ header {
 
 .home-content {
     max-width: 600px;
-    opacity: 0; /* Initially hide content */
 }
 
 .home-content h1 {
@@ -77,7 +76,6 @@ header {
     white-space: nowrap;
     border-right: 2px solid #ededed;
     animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-    opacity: 0; /* Initially hide h1 */
 }
 
 @keyframes typing {
@@ -96,12 +94,6 @@ header {
     50% {
         border-color: transparent;
     }
-}
-
-/* Show content when animation ends */
-.home-content.show {
-    opacity: 1;
-    transition: opacity 1s ease;
 }
 
 .home-content h3 {
@@ -175,4 +167,28 @@ header {
 .home-imgHover:hover {
     background: #081b29;
     opacity: .5;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+    .home {
+        background: #081b29; /* Change background color for smaller screens */
+        justify-content: center; /* Center align content */
+        padding: 20px; /* Add padding */
+    }
+
+    .myPhoto {
+        display: block; /* Display photo for smaller screens */
+        border-radius: 50%; /* Apply border radius */
+        width: 50%; /* Adjust width */
+        position: absolute; /* Position myPhoto */
+        top: calc(50% - 75px); /* Position myPhoto vertically */
+        left: 50%; /* Position myPhoto horizontally */
+        transform: translateX(-50%); /* Center myPhoto horizontally */
+        z-index: -1; /* Set z-index below content */
+    }
+
+    .home-content h1 {
+        margin-top: 120px; /* Add margin to create space for myPhoto */
+    }
 }
