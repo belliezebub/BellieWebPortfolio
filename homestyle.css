@@ -17,7 +17,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 5%; /* Adjust padding for smaller screens */
+    padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,11 +37,12 @@ header {
 }
 
 .navigation a {
-    font-size: 16px; /* Decrease font size for smaller screens */
+    font-size: 18px;
     color: #ededed;
     text-decoration: none;
-    margin-left: 20px; /* Adjust spacing for smaller screens */
+    margin-left: 35px;
     font-weight: 500;
+    margin-left: 35px;
     transition: .3s;
 }
 
@@ -60,27 +61,44 @@ header {
     background-position: center;
     display: flex;
     align-items: center;
-    padding: 0 5%; /* Adjust padding for smaller screens */
+    padding: 0 10%;
 }
 
 .home-content {
     max-width: 600px;
-    text-align: center; /* Center align home content */
 }
 
 .home-content h1 {
-    font-size: 40px; /* Decrease font size for smaller screens */
+    font-size: 50px;
     font-weight: 700;
-    line-height: 1.2; /* Fix typo in property name */
+    line-height: 1.2;
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid #ededed;
     animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: transparent;
+    }
+}
+
 .home-content h3 {
-    font-size: 24px; /* Decrease font size for smaller screens */
-    font-weight: 700; /* Remove extra 'px' from font-weight */
+    font-size: 32px;
+    font-weight: 700;
     color: #00abf0;
 }
 
@@ -91,16 +109,18 @@ header {
 
 .home-content .btn-group {
     display: flex;
-    justify-content: center; /* Center align button group */
-    margin-top: 20px;
+    width: 155px;
+    height: 50px;
+    background: transparent;
 }
 
 .btn-group a {
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 50px;
+    height: 100%;
     background: #00abf0;
     border: 2px solid;
     border-radius: 8px;
@@ -112,7 +132,6 @@ header {
     z-index: 1;
     overflow: hidden;
     transition: .5s;
-    margin-right: 15px; /* Add some spacing between buttons */
 }
 
 .btn-group a:hover {
@@ -151,54 +170,25 @@ header {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 768px) {
-    .logo {
-        font-size: 28px; /* Decrease logo size for smaller screens */
+@media only screen and (max-width: 767px) {
+    .home {
+        background: #081b29; /* Change background color for smaller screens */
+        justify-content: center; /* Center align content */
+        padding: 20px; /* Add padding */
     }
-    .navigation a {
-        font-size: 14px; /* Further decrease font size for smaller screens */
-        margin-left: 15px; /* Further adjust spacing for smaller screens */
-    }
-    .home-content h1 {
-        font-size: 32px; /* Further decrease font size for smaller screens */
-    }
-    .home-content h3 {
-        font-size: 20px; /* Further decrease font size for smaller screens */
-    }
-    .home-content p {
-        font-size: 14px; /* Further decrease font size for smaller screens */
-    }
-    .btn-group a {
-        width: auto; /* Adjust button width to fit content */
-        padding: 10px 15px; /* Adjust button padding */
-    }
-}
 
-@media only screen and (max-width: 576px) {
-    .logo {
-        font-size: 24px; /* Further decrease logo size for smaller screens */
+    .myPhoto {
+        display: block; /* Display photo for smaller screens */
+        border-radius: 50%; /* Apply border radius */
+        width: 50%; /* Adjust width */
+        position: absolute; /* Position myPhoto */
+        top: calc(50% - 75px); /* Position myPhoto vertically */
+        left: 50%; /* Position myPhoto horizontally */
+        transform: translateX(-50%); /* Center myPhoto horizontally */
+        z-index: -1; /* Set z-index below content */
     }
-    .navigation {
-        display: none; /* Hide navigation links for smaller screens */
-    }
-    .home-content {
-        padding: 0 5%; /* Adjust content padding for smaller screens */
-    }
+
     .home-content h1 {
-        font-size: 28px; /* Further decrease font size for smaller screens */
-    }
-    .home-content h3 {
-        font-size: 18px; /* Further decrease font size for smaller screens */
-    }
-    .home-content p {
-        font-size: 12px; /* Further decrease font size for smaller screens */
-    }
-    .btn-group {
-        flex-direction: column; /* Display buttons vertically */
-        align-items: center; /* Center align buttons */
-    }
-    .btn-group a {
-        width: 100%; /* Make buttons full width */
-        margin-bottom: 10px; /* Add spacing between buttons */
+        margin-top: 120px; /* Add margin to create space for myPhoto */
     }
 }
