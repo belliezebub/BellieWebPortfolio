@@ -95,7 +95,13 @@ header {
         border-color: transparent;
     }
 }
-
+/* Add initial opacity to hide elements */
+.home-content h3,
+.home-content p,
+.home-content .btn-group {
+    opacity: 0;
+    transition: opacity 1s ease; /* Smooth transition */
+}
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
@@ -169,13 +175,7 @@ header {
     opacity: .5;
 }
 
-/* Add initial opacity to hide elements */
-.home-content h3,
-.home-content p,
-.home-content .btn-group {
-    opacity: 0;
-    transition: opacity 1s ease; /* Smooth transition */
-}
+
 
 /* Media Queries */
 @media only screen and (max-width: 767px) {
