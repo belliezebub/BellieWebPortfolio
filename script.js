@@ -18,6 +18,25 @@ document.addEventListener('DOMContentLoaded', function() {
         btnGroup.classList.add('show');
     }
 
+    // Check if the typing animation is already complete
+    function checkAnimationComplete() {
+        // Check if h1 is fully visible
+        if (isElementInViewport(h1)) {
+            addShowClass();
+        }
+    }
+
+    // Check if an element is fully visible in the viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
     // When the typing animation ends, call the function to add 'show' class
     h1.addEventListener('animationend', function(event) {
         // Check if the animation is the typing animation
@@ -26,8 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // In case the typing animation doesn't run (e.g., if animation is already complete)
-    if (h1.offsetWidth === 0 && h1.offsetHeight === 0) {
-        addShowClass();
-    }
+    // Call the function to check if the animation is already complete
+    checkAnimationComplete();
+
+    // Listen for scroll events to check if the animation is complete
+    window.addEventListener('scroll', function() {
+        checkAnimationComplete();
+    });
 });
