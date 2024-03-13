@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the h1 element
     var h1 = container.querySelector('h1');
 
-    // Get the button element
+    // Get the h3, p, and button elements
+    var h3 = container.querySelector('h3');
+    var p = container.querySelector('p');
     var btnGroup = container.querySelector('.btn-group');
 
-    // Function to add 'show' class after typing animation completes
+    // Function to add 'show' class to elements
     function addShowClass() {
-        // Add 'show' class to container
-        container.classList.add('show');
-        // Show the button
+        // Add 'show' class to elements
+        h3.classList.add('show');
+        p.classList.add('show');
         btnGroup.classList.add('show');
     }
 
