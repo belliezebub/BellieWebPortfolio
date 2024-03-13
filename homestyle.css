@@ -42,6 +42,7 @@ header {
 	margin-left:35px;
     	transition: .3s;
 }
+.myPhoto{display:none;}
 .navigation a:hover {
     	color: #00abf0;
 }
