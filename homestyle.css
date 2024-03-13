@@ -182,9 +182,9 @@ header {
         border-radius: 50%; /* Apply border radius */
         width: 50%; /* Adjust width */
         position: absolute; /* Position myPhoto */
-        top: calc(50% - 75px); /* Position myPhoto vertically */
+        top: 50%; /* Position myPhoto vertically */
         left: 50%; /* Position myPhoto horizontally */
-        transform: translateX(-50%); /* Center myPhoto horizontally */
+        transform: translate(-50%, -50%); /* Center myPhoto */
         z-index: -1; /* Set z-index below content */
     }
 
