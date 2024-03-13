@@ -42,7 +42,6 @@ header {
     text-decoration: none;
     margin-left: 35px;
     font-weight: 500;
-    margin-left: 35px;
     transition: .3s;
 }
 
@@ -66,6 +65,17 @@ header {
 
 .home-content {
     max-width: 600px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .home-content h1 {
@@ -96,17 +106,17 @@ header {
     }
 }
 
-/* Add initial opacity to hide elements */
 .home-content h3,
 .home-content p,
 .home-content .btn-group {
     opacity: 0;
-    transition: opacity 1s ease; /* Smooth transition */
+    transition: opacity 1s ease;
 }
+
 .home-content h3.show,
 .home-content p.show,
 .home-content .btn-group.show {
-    opacity: 1; /* Show elements with 'show' class */
+    opacity: 1;
 }
 
 .home-content h3 {
@@ -182,28 +192,25 @@ header {
     opacity: .5;
 }
 
-
-
-/* Media Queries */
 @media only screen and (max-width: 767px) {
     .home {
-        background: #081b29; /* Change background color for smaller screens */
-        justify-content: center; /* Center align content */
-        padding: 20px; /* Add padding */
+        background: #081b29;
+        justify-content: center;
+        padding: 20px;
     }
 
     .myPhoto {
-        display: block; /* Display photo for smaller screens */
-        border-radius: 50%; /* Apply border radius */
-        width: 50%; /* Adjust width */
-        position: absolute; /* Position myPhoto */
-        top: 50%; /* Position myPhoto vertically */
-        left: 50%; /* Position myPhoto horizontally */
-        transform: translate(-50%, -50%); /* Center myPhoto */
-        z-index: -1; /* Set z-index below content */
+        display: block;
+        border-radius: 50%;
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
     }
 
     .home-content h1 {
-        margin-top: 120px; /* Add margin to create space for myPhoto */
+        margin-top: 120px;
     }
 }
