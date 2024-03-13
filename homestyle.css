@@ -96,12 +96,19 @@ header {
     }
 }
 /* Add initial opacity to hide elements */
+/* Add initial opacity to hide elements */
 .home-content h3,
 .home-content p,
 .home-content .btn-group {
     opacity: 0;
     transition: opacity 1s ease; /* Smooth transition */
 }
+.home-content h3.show,
+.home-content p.show,
+.home-content .btn-group.show {
+    opacity: 1; /* Show elements with 'show' class */
+}
+
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
